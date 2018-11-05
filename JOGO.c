@@ -6,12 +6,22 @@
 //Valores globais para usar no programa
 #define LINHAS 25
 #define COLUNAS 40
-#define VERDE 10
-#define AZUL 11
-#define AMARELO 14
-#define VERMELHO 12
-#define BRANCO 15
-#define CINZA 8
+#define BLACK 0
+#define BLUE 1
+#define GREEN 2
+#define CYAN 3
+#define RED	4
+#define MAGENTA 5
+#define BROWN 6
+#define LIGHTGRAY 7        // LISTA DE CORES QUE SAO POSSIVEIS UTILIZAR
+#define DARKGRAY 8
+#define LIGHTBLUE 9
+#define LIGHTGREEN 10
+#define LIGHTCYAN 11
+#define LIGHTRED 12
+#define LIGHTMAGENTA 13
+#define YELLOW 14
+#define WHITE 15
 
 void abre_fase (char m[LINHAS][COLUNAS], char nome_arquivo[40]);
 void gotoxy (int x, int y){
@@ -63,7 +73,7 @@ int main(){
 		//variavel especial para trocar cor da fonte
 		HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 		//função especial que troca a cor da fonte de acordo com uma tabela de cores
-		SetConsoleTextAttribute (hConsole, AZUL);	
+		SetConsoleTextAttribute (hConsole, LIGHTRED);	
 	
 		//Limpa tela antes de começar o jogo
 		system("cls");
