@@ -134,10 +134,22 @@ int main(){
 					//descobre qual seta foi clicada
 					keypress = getch();
 				
-					if(keypress == 72) mrDo.j++; 
-					if(keypress == 75) mrDo.j--;
-					if(keypress == 77) mrDo.j++; 
-					if(keypress == 80) mrDo.j--;
+					if(keypress == 72){    //TECLA PRA CIMA ↑
+						mrDo.i--;
+						Beep(900,150);Sleep(110);
+					}
+					if(keypress == 75){
+						mrDo.j--;
+						Beep(900,150);Sleep(110);			//LADO ESQUERDO
+					} 
+					if(keypress == 77){
+						mrDo.j++;
+						Beep(900,150);Sleep(110);			 //LADO DIREITO
+					}  
+					if(keypress == 80){	
+						mrDo.i++;
+						Beep(900,150);Sleep(110);			//LADO PRA BAIXO
+					}  
 				
 					break;
 				case 32:
