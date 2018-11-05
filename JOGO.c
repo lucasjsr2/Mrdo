@@ -44,6 +44,7 @@ typedef struct{
 	int b;
 	int lastDirection;
 	char status;
+	
 }Component;
 //Funcao principal
 int main(){
@@ -95,7 +96,7 @@ int main(){
 			gotoxy(0,0);		
 		
 			//Desenha o mrDo
-			cenario[mrDo.i][mrDo.j] = '7';
+			cenario[mrDo.i][mrDo.j] = (char)244;
 		
 			//mostrar a tela
 			//==============================
