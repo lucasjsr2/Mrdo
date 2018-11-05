@@ -93,13 +93,13 @@ int main(){
 		mrDo.i = LINHAS - 1;
 		mrDo.j = COLUNAS/2;
 	
-		while(keypress != (int)'o'){
+		while(keypress != (int)'0'){
 			gotoxy(0,0);		
 		
 			//Desenha o mrDo
 			cenario[mrDo.i][mrDo.j] = (char)244;
 		
-			//mostrar a tela
+			//monta o cenario
 			//==============================
 			for(i=0; i<=COLUNAS+1; i++) printf("#");
 				printf("\n");
@@ -126,40 +126,37 @@ int main(){
 			}
 		
 			switch(keypress){
-				case 224:
-				
-					//apaga o mrDo na posição anterior
-					cenario[mrDo.i][mrDo.j]= ' ';
+				case 224: cenario[mrDo.i][mrDo.j]= ' ';
 
-					//descobre qual seta foi clicada
+					//descobre qual tecla foi pressionada
 					keypress = getch();
 				
-					if(keypress == 72){    //TECLA PRA CIMA ↑
+					if(keypress == 72){  //MOVE PARA CIMA
 						mrDo.i--;
-						Beep(900,150);Sleep(110);
+						Beep(270,60);
 					}
 					if(keypress == 75){
 						mrDo.j--;
-						Beep(900,150);Sleep(110);			//LADO ESQUERDO
+						Beep(270,60);	// MOVE LADO ESQUERDO
 					} 
 					if(keypress == 77){
 						mrDo.j++;
-						Beep(900,150);Sleep(110);			 //LADO DIREITO
+						Beep(270,60);	// MOVELADO DIREITO
 					}  
 					if(keypress == 80){	
 						mrDo.i++;
-						Beep(900,150);Sleep(110);			//LADO PRA BAIXO
-					}  
-				
+						Beep(270,60);  // MOVE LADO PRA BAIXO		
+					} 
 					break;
-				case 32:
-					//tiros
+				case 32:		// TECLA ESPAÇO, FAZ O MR.DO ATIRAR
+					//codigo para atirar.....     
+				
 					break;			
 			}			
 		}
 	}
 }
-//teste
+
 void abre_fase (char m[LINHAS][COLUNAS], char nome_arquivo[40]){
     int i;
     int j;
