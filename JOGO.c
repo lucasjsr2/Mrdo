@@ -3,7 +3,6 @@
 #include <stdlib.h>
 #include <Windows.h>
 #include <conio.h>
-
 //Valores globais para usar no programa
 #define LINHAS 25
 #define COLUNAS 40
@@ -17,15 +16,13 @@
 void abre_fase (char m[LINHAS][COLUNAS], char nome_arquivo[40]);
 void gotoxy (int x, int y){
     COORD coord = {0, 0};
-    coord.X = x; coord.Y = y; // X and Y coordinates
+    coord.X = x; coord.Y = y; // Cordenadas X e Y
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
 }
 
 void ShowConsoleCursor(int showFlag){
     HANDLE out = GetStdHandle(STD_OUTPUT_HANDLE);
-
     CONSOLE_CURSOR_INFO     cursorInfo;
-
     GetConsoleCursorInfo(out, &cursorInfo);
     cursorInfo.bVisible = showFlag; // set the cursor visibility
     SetConsoleCursorInfo(out, &cursorInfo);
@@ -111,8 +108,11 @@ int main(){
 
 			//==============================
 			//pega as setas do teclado
-			if(kbhit()) keypress = getch();
-			else keypress = 0;
+			if(kbhit()){
+				keypress = getch();
+			}else{
+				keypress = 0;
+			}
 		
 			switch(keypress){
 				case 224:
