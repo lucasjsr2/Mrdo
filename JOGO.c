@@ -4,8 +4,8 @@
 #include <Windows.h>
 #include <conio.h>
 //Valores globais para usar no programa
-#define LINHAS 25
-#define COLUNAS 40
+#define LINHAS 23
+#define COLUNAS 60
 #define BLACK 0
 #define BLUE 1
 #define GREEN 2
@@ -56,18 +56,18 @@ int main(){
 	
 		char matriz[LINHAS][COLUNAS];
 
-		system("color A");
-		printf("\n _________________________________ ");
-		printf("\n              Mr Do!             ");
-		printf("\n _________________________________ ");
-		printf("\n\t 1 - Novo Jogo ");
-		printf("\n\t 2 - Continuar ");
-		printf("\n\t 3 - High Scores ");
-		printf("\n\t 4 - Sair ");
-		printf("\n _________________________________ ");
-		printf("\n Entre com a opcao desejada: "); 
+		system("color 5");
+		printf("\n\n\n\n\n\n");
+		printf("\n\t _________________________________ ");
+		printf("\n\t              Mr Do!             ");
+		printf("\n\t _________________________________ ");
+		printf("\n\t\t 1 - Novo Jogo ");
+		printf("\n\t\t 2 - Continuar ");
+		printf("\n\t\t 3 - High Scores ");
+		printf("\n\t\t 4 - Sair ");
+		printf("\n\t _________________________________ ");
+		printf("\n\t Entre com a opcao desejada: "); 
 		scanf("%d", &numero);
-		printf("\n _________________________________ \n\n ");
 
 	if(numero == 1){
 		//variavel especial para trocar cor da fonte
@@ -96,7 +96,7 @@ int main(){
 			gotoxy(0,0);		
 		
 			//Desenha o mrDo
-			cenario[mrDo.i][mrDo.j] = '0';
+			cenario[mrDo.i][mrDo.j] = '7';
 		
 			//mostrar a tela
 			//==============================
