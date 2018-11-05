@@ -66,6 +66,7 @@ int main(){
 		printf("\n\t\t 2 - Continuar ");
 		printf("\n\t\t 3 - High Scores ");
 		printf("\n\t\t 4 - Sair ");
+		printf("\n\t\t 0 - Fechar o jogo ");
 		printf("\n\t _________________________________ ");
 		printf("\n\t Entre com a opcao desejada: "); 
 		scanf("%d", &numero);
