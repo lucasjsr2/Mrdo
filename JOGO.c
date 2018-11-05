@@ -74,7 +74,6 @@ int main(){
 		HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 		//função especial que troca a cor da fonte de acordo com uma tabela de cores
 		SetConsoleTextAttribute (hConsole, LIGHTRED);	
-	
 		//Limpa tela antes de começar o jogo
 		system("cls");
 	
