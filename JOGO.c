@@ -42,8 +42,6 @@ typedef struct{
 	int j;
 	int c;
 	int b;
-	int lastDirection;
-	char status;
 	
 }Component;
 //Funcao principal
@@ -74,14 +72,14 @@ int main(){
 		//variavel especial para trocar cor da fonte
 		HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 		//função especial que troca a cor da fonte de acordo com uma tabela de cores
-		SetConsoleTextAttribute (hConsole, LIGHTRED);	
+		SetConsoleTextAttribute (hConsole, WHITE);	
 		//Limpa tela antes de começar o jogo
-		system("cls");
+		system("cls");   //Inicializa a tela em branco
 	
-		//Inicializa a tela em branco
+		
 		//==============================
 		for(i=0; i<LINHAS; i++){
-			for(j=0; j<COLUNAS; j++){
+			for(j=0; j<COLUNAS; j++){  // desenha parte do cenario
 				cenario[i][j] = '|';
 			}		
 		}	
@@ -149,9 +147,10 @@ int main(){
 					} 
 					break;
 				case 32:
-					cenario[mrDo.i++][mrDo.j--] = (char)250;		// TECLA ESPAÇO, FAZ O MR.DO ATIRAR
+					cenario[mrDo.i++][mrDo.j] = (char)250;		// TECLA ESPAÇO, FAZ O MR.DO ATIRAR
 					//codigo para atirar.....   
 					
+     
 				
 					break;			
 			}			
@@ -159,24 +158,24 @@ int main(){
 	}
 }
 
-void abre_fase (char m[LINHAS][COLUNAS], char nome_arquivo[40]){
-    int i;
-    int j;
-    FILE *fp;
+// void abre_fase (char m[LINHAS][COLUNAS], char nome_arquivo[40]){
+//     int i;
+//     int j;
+//     FILE *fp;
 
-    fp = fopen(nome_arquivo, "r"); //Abre o jogo
+//     fp = fopen(nome_arquivo, "r"); //Abre o jogo
 
-    if (fp == NULL){
-        printf("Erro na abertura da fase.");
-    } else {
-        for(i=0; i < LINHAS; i++)
-        {//t
-            for(j = 0; j < COLUNAS; j++)
-            {
-                m[i][j] = getc(fp);
-            }
-        }
-        fclose(fp);
+//     if (fp == NULL){
+//         printf("Erro na abertura da fase.");
+//     } else {
+//         for(i=0; i < LINHAS; i++)
+//         {//t
+//             for(j = 0; j < COLUNAS; j++)
+//             {
+//                 m[i][j] = getc(fp);
+//             }
+//         }
+//         fclose(fp);
 		
-    }
-}
+//     }
+// }
