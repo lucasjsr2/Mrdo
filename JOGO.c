@@ -66,7 +66,6 @@ int main(){
 		printf("\n\t\t 2 - Continuar ");
 		printf("\n\t\t 3 - High Scores ");
 		printf("\n\t\t 4 - Sair ");
-		printf("\n\t\t 0 - Fechar o jogo ");
 		printf("\n\t _________________________________ ");
 		printf("\n\t Entre com a opcao desejada: "); 
 		scanf("%d", &numero);
@@ -93,7 +92,7 @@ int main(){
 		mrDo.i = LINHAS - 1;
 		mrDo.j = COLUNAS/2;
 	
-		while(keypress != (int)'0'){
+		while(keypress != (int)'4'){
 			gotoxy(0,0);		
 		
 			//Desenha o mrDo
@@ -103,6 +102,7 @@ int main(){
 			//==============================
 			for(i=0; i<=COLUNAS+1; i++) printf("#");
 				printf("\n");
+			
 		
 			for(i=0; i<LINHAS; i++){
 				printf("#");
@@ -126,14 +126,14 @@ int main(){
 			}
 		
 			switch(keypress){
-				case 224: cenario[mrDo.i][mrDo.j]= ' ';
+				case 224: cenario[mrDo.i][mrDo.j]= ' '; // apaga o Mr.Do da posicao anterior
 
 					//descobre qual tecla foi pressionada
 					keypress = getch();
 				
 					if(keypress == 72){  //MOVE PARA CIMA
 						mrDo.i--;
-						Beep(270,60);
+						Beep(500,60);
 					}
 					if(keypress == 75){
 						mrDo.j--;
@@ -148,8 +148,10 @@ int main(){
 						Beep(270,60);  // MOVE LADO PRA BAIXO		
 					} 
 					break;
-				case 32:		// TECLA ESPAÇO, FAZ O MR.DO ATIRAR
-					//codigo para atirar.....     
+				case 32:
+					cenario[mrDo.i++][mrDo.j--] = (char)250;		// TECLA ESPAÇO, FAZ O MR.DO ATIRAR
+					//codigo para atirar.....   
+					
 				
 					break;			
 			}			
@@ -175,5 +177,6 @@ void abre_fase (char m[LINHAS][COLUNAS], char nome_arquivo[40]){
             }
         }
         fclose(fp);
+		
     }
 }
